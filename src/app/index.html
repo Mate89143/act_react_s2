@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componente Tarjeta Global</title>
+    <!-- No es necesario cargar globals.css aquí ya que el componente lo hace internamente -->
+</head>
+<body>
+    <h1>Ejemplo de Componente Tarjeta Global</h1>
+    <p>Selecciona un color para ver cómo cambia la tarjeta:</p>
+    
+    <div>
+        <button onclick="cambiarColor('azul')">Azul</button>
+        <button onclick="cambiarColor('verde')">Verde</button>
+        <button onclick="cambiarColor('naranja')">Naranja</button>
+        <button onclick="cambiarColor('rojo')">Rojo</button>
+    </div>
+    
+    <tarjeta-global 
+        titulo="Bienvenido a la Tarjeta Global" 
+        contenido="Este es un componente de tarjeta que utiliza estilos globales. Pasa el cursor sobre la tarjeta para ver el efecto hover."
+        color="azul">
+    </tarjeta-global>
+
+    <script src="app/components/TarjetaGlobal.js"></script>
+    
+    <script>
+        // Función para cambiar el color de la tarjeta
+        function cambiarColor(color) {
+            const tarjeta = document.querySelector('tarjeta-global');
+            tarjeta.setAttribute('color', color);
+        }
+    </script>
+</body>
+</html>
